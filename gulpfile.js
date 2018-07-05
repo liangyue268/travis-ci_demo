@@ -19,11 +19,11 @@ gulp.task('copyHtml', () =>
 );
 
 //image min task
-gulp.task('imageMin', () =>
-	gulp.src('src/images/*')
+gulp.task('imageMin', function() {
+	return gulp.src('src/images/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/images'))
-);
+		.pipe(gulp.dest('dist/images'));
+});
 
 //concat and minify js
 gulp.task('concat&minify', function() {
